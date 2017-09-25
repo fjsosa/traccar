@@ -7,8 +7,8 @@
     <!-- SERVER CONFIG -->
 
     <entry key='web.enable'>true</entry>
-    <entry key='web.port'>8082</entry>
-    <entry key='web.path'>./web</entry>
+    <entry key='web.port'>8090</entry>
+    <entry key='web.path'>./traccar-web/web</entry>
     <entry key='web.cacheControl'>max-age=3600,public</entry>
 
     <entry key='geocoder.enable'>true</entry>
