@@ -1,10 +1,12 @@
 target
+deploy
 nbactions.xml
 .classpath
 .project
 .settings
 .idea
 *.iml
+.class
 .DS_Store
 .checkstyle
 nbactions-release-profile.xml

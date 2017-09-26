@@ -154,12 +154,10 @@ public class H02ProtocolDecoder extends BaseProtocolDecoder {
             .text("VP1,")
             .or()
             .groupBegin()
-            .text("V1,")
-            .or()
             .text("V4,")
             .expression("(.*),")                 // response
             .or()
-            .text("V19,")
+            .expression("V[^,]*,")
             .groupEnd()
             .number("(?:(dd)(dd)(dd))?,")        // time (hhmmss)
             .groupEnd()
@@ -392,7 +390,7 @@ public class H02ProtocolDecoder extends BaseProtocolDecoder {
         position.set(Position.KEY_RSSI, parser.nextInt());
         position.set(Position.KEY_SATELLITES, parser.nextInt());
         position.set(Position.KEY_BATTERY_LEVEL, parser.nextInt());
-        position.set("steps", parser.nextInt());
+        position.set(Position.KEY_STEPS, parser.nextInt());
         position.set("turnovers", parser.nextInt());
 
         dateBuilder.setDateReverse(parser.nextInt(0), parser.nextInt(0), parser.nextInt(0));

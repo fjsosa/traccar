@@ -1,0 +1,32 @@
+1) Compilar la solución en NetBeans (F11)
+2) Crear una carpeta destino (<deploy>)
+3) crear la estructura de sub carpetas
+
+<deploy>
+   |_ logs
+   |_ media
+   |_ schema
+   |_ web
+
+en el raiz (<deploy>)
+4) copiar el arhivo generado por la compilacion llamado
+  tracker-server-jar-with-dependencies.jar
+5) renombrar este archivo como:
+   tracker-server.jar
+6) copiar desde la sub carpeta setup hacia <deploy> los archivos
+   traccar.xml
+   default.xml
+7) editar estos arvhivos y setear los paths correspondientes.
+8) copiar la carpeta schema en <deploy>/schema
+9) dentro de <deploy>/web copiar el contenido de traccar-web\web
+10) para evitar problema con los arvhivos minimizados, editar el archivo
+    release.html
+    y agregar este atributo
+   mode="debug" 
+   en el tag id="loadScript" para que quede de la forma:
+
+   <script id="loadScript" mode="debug" src="load.js"></script>
+
+11) ejecutar
+java -jar tracker-server.jar traccar.xml
+
