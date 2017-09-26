@@ -8,3 +8,4 @@ nbactions.xml
 .DS_Store
 .checkstyle
 nbactions-release-profile.xml
+nb-configuration.xml
